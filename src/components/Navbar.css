@@ -1,0 +1,220 @@
+/* Main Navbar Container */
+.navbar-container {
+  height: 64px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 61px;
+  box-sizing: border-box;
+  z-index: 100;
+  background-color: rgba(246, 246, 246, 0.06);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Three-Column Flexbox Layout */
+.nav-left, .nav-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.nav-center {
+  display: flex;
+  justify-content: center;
+}
+.nav-left {
+  justify-content: flex-start;
+}
+.nav-right {
+  justify-content: flex-end;
+}
+
+/* Logo */
+.navbar-logo {
+  width: auto;
+  height: 42px;
+  display: block;
+}
+
+/* Navigation Links List (Desktop) */
+.nav-links-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.nav-links a:hover {
+  opacity: 0.75;
+}
+
+.nav-links a.active {
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #a07dff;
+}
+
+/* Auth Buttons */
+.login-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 89px;
+  height: 34px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.login-button:hover {
+  background-color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.nav-user-info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.readings-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 34px;
+  border-radius: 3px;
+  background-color: #1a1a1a;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
+}
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  object-fit: cover;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+.nav-avatar:hover {
+  border-color: #a07dff;
+}
+
+/* --- Hamburger Menu Icon & Responsive Logic --- */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: all 0.4s ease-in-out;
+}
+.mobile-auth {
+  display: none; /* Hide mobile auth section by default */
+}
+
+@media (max-width: 850px) {
+  .navbar-container {
+    padding: 0 30px;
+  }
+  .nav-center {
+    position: absolute; /* Take it out of flow to not affect left/right alignment */
+  }
+  
+  /* Hide the desktop nav links and auth */
+  .nav-links-wrapper {
+    position: fixed;
+    top: 64px;
+    right: -100%;
+    width: 60%;
+    max-width: 300px;
+    height: calc(100vh - 64px);
+    background-color: rgba(20, 22, 30, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: right 0.5s ease-in-out;
+  }
+
+  .nav-links-wrapper.active {
+    right: 0;
+  }
+
+  .nav-links {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+
+  .desktop-auth {
+    display: none; /* Hide the desktop auth section */
+  }
+
+  .mobile-auth {
+    display: block; /* Show the mobile auth section */
+    margin-top: 2rem; /* Add some space above it */
+  }
+  
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Hamburger icon animation to "X" */
+  .bar.open:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .bar.open:nth-child(2) {
+    opacity: 0;
+  }
+  .bar.open:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}

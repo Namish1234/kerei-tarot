@@ -1,0 +1,42 @@
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* UPDATED: Increased height to push the text down */
+  height: 50vh; /* Was 40vh */
+  text-align: center;
+  color: #FFFFFF;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #C1C1C1;
+  margin-top: 4px;
+  position: relative;
+  left: 35px;
+}
+
+.hero-container.blurred {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    left: 0;
+  }
+}

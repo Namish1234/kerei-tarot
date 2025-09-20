@@ -1,0 +1,71 @@
+.cards-page-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 2rem 4rem;
+  color: white;
+}
+
+.cards-page-container h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* --- UPDATED: Responsive Card Grid --- */
+.card-grid {
+  display: grid;
+  gap: 1.5rem; /* Default gap for mobile */
+  margin-bottom: 4rem;
+  /* Mobile First: Default to 2 columns */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Tablet: 3 columns */
+@media (min-width: 600px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop: 4 columns */
+@media (min-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; /* A slightly larger gap for desktop */
+  }
+}
+/* --- End of Grid Update --- */
+
+
+.card-link {
+  text-decoration: none;
+  color: #e0e0e0;
+  text-align: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card-link:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+.card-link img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-link p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .cards-page-container {
+    padding: 80px 1rem 2rem;
+  }
+}

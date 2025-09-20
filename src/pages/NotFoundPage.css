@@ -1,0 +1,115 @@
+.not-found-container {
+  display: flex;
+  /* UPDATED: Lock height to the viewport and hide any overflow */
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: #e0e0e0;
+  
+  /* Flexbox for the split layout */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto; /* Removed top/bottom margin */
+  padding: 2rem; /* Simplified padding */
+}
+
+.not-found-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+.not-found-image {
+  /* UPDATED: Made the image smaller */
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.not-found-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  min-width: 300px;
+}
+
+.not-found-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.not-found-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+.not-found-link {
+  background-color: #a07dff;
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.not-found-link:hover {
+  background-color: #7d4dff;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .not-found-container {
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 64px; /* Account for navbar */
+    gap: 20px; /* Reduced gap */
+  }
+  
+  .not-found-content {
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .not-found-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .not-found-image-wrapper {
+    min-width: unset;
+    /* UPDATED: Made the image smaller on stacked view */
+    max-width: 350px; 
+  }
+}
+
+@media (max-width: 600px) {
+  .not-found-container {
+    padding-top: 80px;
+  }
+  .not-found-content h1 {
+    font-size: 2rem;
+  }
+  .not-found-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .not-found-image-wrapper {
+    max-width: 90%;
+  }
+}

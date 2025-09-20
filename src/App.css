@@ -1,0 +1,29 @@
+/* Transitions for Hero and CardFan components */
+.hero-container, .card-fan-wrapper {
+  /* UPDATED: Slower, smoother transition */
+  transition: transform 0.8s ease-in-out, filter 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* This makes the Hero text completely invisible */
+.hero-container.blurred {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Blur, darken, and lower the Card Fan */
+.card-fan-wrapper.blurred {
+  filter: blur(4px) brightness(0.6); 
+  transform: translateX(-50%) translateY(50px); 
+  opacity: 0.8;
+}
+
+/* The full-screen close button */
+.close-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  cursor: pointer;
+}

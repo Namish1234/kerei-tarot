@@ -1,0 +1,60 @@
+/* Container for the selected card */
+.selected-card-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  width: 300px;
+  height: 533px;
+  perspective: 1500px;
+  z-index: 100;
+  cursor: pointer;
+  
+  /* The ARRIVE animation is on the CONTAINER */
+  animation: arrive 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes arrive {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* The flipper element handles ONLY the 3D transform */
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  
+  /* The flip itself is a TRANSITION */
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.flipper.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Shared styles for the card faces */
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The back face is initially rotated 180 degrees */
+.card-back {
+  transform: rotateY(180deg);
+}

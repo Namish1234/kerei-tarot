@@ -1,0 +1,38 @@
+/* 1. Import the 'Inter' font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
+
+/* 2. Set global styles */
+/* In src/index.css */
+/* This is a best-practice rule to prevent padding from causing overflow */
+* {
+  box-sizing: border-box;
+}
+
+/* Updated styles for the main page layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  /* UPDATED: This allows the body to grow with your content */
+  min-height: 100vh;
+
+  /* REMOVED: This was causing the horizontal scrollbar */
+  /* width: 100vw; */
+
+  /* ADDED: This explicitly prevents any horizontal scrolling */
+  overflow-x: hidden;
+
+  /* Background image setup */
+  background-image: url('./assets/background.jpg');
+  background-color: #10121A; /* Fallback color */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* ADDED: This is the key to keeping the background fixed during scroll */
+  background-attachment: fixed;
+}
+
+/* Custom cursors */
+

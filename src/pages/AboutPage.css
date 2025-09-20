@@ -1,0 +1,142 @@
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 2rem 5rem 2rem;
+  align-items: flex-start;
+}
+
+/* Right Column: Developer Info */
+.developer-pane {
+  position: sticky;
+  top: 120px;
+  text-align: center;
+  color: #f0f0f0;
+  order: 2;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.developer-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #7d4dff;
+  box-shadow: 0 0 20px rgba(125, 77, 255, 0.6);
+  margin-bottom: 1rem;
+}
+
+.developer-pane h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.developer-pane .developer-title {
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+  color: #b0b0b0;
+  font-weight: 400;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  color: #c0c0c0;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #a07dff;
+  transform: scale(1.2);
+}
+
+.gemini-credit {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.5;
+  padding: 0 1rem;
+}
+
+
+/* Left Column: Main Content */
+.content-pane {
+  color: #e0e0e0;
+  order: 1;
+}
+
+.content-pane h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.content-pane .subtitle {
+  font-size: 1.2rem;
+  max-width: 650px;
+  color: #b0b0b0;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.content-pane h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(125, 77, 255, 0.5), rgba(125, 77, 255, 0));
+  margin-bottom: 2rem;
+}
+
+.bionic-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #c0c0c0;
+  margin-bottom: 1rem;
+}
+
+/* REMOVED: The style for .bionic-text b is no longer needed */
+
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr; /* Stack columns */
+    padding-top: 100px;
+    gap: 2rem;
+  }
+  .developer-pane {
+    position: static;
+    order: 1; /* Developer info goes first on mobile */
+  }
+  .content-pane {
+    order: 2;
+  }
+  .content-pane h1, .content-pane .subtitle {
+    text-align: center;
+  }
+}
