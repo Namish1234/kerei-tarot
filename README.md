@@ -10,10 +10,10 @@ _(Suggestion: Take a nice screenshot of your app and replace the link above)_
 ## ✨ Features
 
 * **Interactive Card Picking:** Pick a random card from a beautifully animated fan of 78 Tarot cards on the homepage.
-* **Complete Card Library:** Browse the full 78-card deck in a responsive grid. Click any card to view its details in a sleek, glassmorphism overlay.
-* **User Authentication:** Securely sign up or log in using Google or a traditional Email/Password account, powered by Firebase Authentication.
+* **Complete Card Library:** Browse the full 78-card deck with a responsive grid layout. Click any card to view its details in a sleek, glassmorphism overlay.
+* **User Authentication:** Securely sign up or log in with Google or Email/Password using Firebase.
 * **Personal Readings Log:** Logged-in users have their readings automatically saved to a personal, persistent log in Firestore, complete with timestamps.
-* **Fully Responsive Design:** A seamless experience on desktop, tablet, and mobile devices, from the navbar to the card layouts.
+* **Fully Responsive Design:** A seamless experience on desktop, tablet, and mobile devices.
 * **Modern Animations:** Smooth page transitions and UI animations powered by Framer Motion.
 
 ## 🛠️ Tech Stack
@@ -37,9 +37,9 @@ You need to have Node.js and npm installed on your machine.
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/your-username/kerei-tarot.git](https://github.com/your-username/kerei-tarot.git)
+    git clone [https://github.com/Namish1234/kerei-tarot.git](https://github.com/Namish1234/kerei-tarot.git)
     ```
-2.  **Navigate to the project directory:**
+2.  **Navigate to the directory:**
     ```sh
     cd kerei-tarot
     ```
@@ -66,6 +66,8 @@ You need to have Node.js and npm installed on your machine.
 ## 👤 Author
 
 **Zaratsu**
-* GitHub: [@your-username](https://github.com/your-username)
+
+* GitHub: [@Namish1234](https://github.com/Namish1234)
+* Instagram: [@namish_000](https://www.instagram.com/namish_000/)
 
 This project's journey, from initial concept to debugging complex animations, was navigated with the assistance of Google's Gemini.
