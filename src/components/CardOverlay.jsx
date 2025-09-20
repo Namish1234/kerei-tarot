@@ -1,28 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { tarotData } from '../data/tarotData';
 import './CardOverlay.css';
 
-// REMOVED: The getImageUrl helper function is no longer needed here
-
 const CardOverlay = ({ cardId, onClose }) => {
   const card = tarotData.find((c) => c.id === cardId);
+  const [showInfo, setShowInfo] = useState(false);
 
-  // ... (the rest of the component is the same, just using card.image)
-  // ... for example:
-  // <img src={card.image} alt={card.name} />
-  
-  if (!card) {
-    return null;
-  }
-  
-  // (The full component code is long, so I'm showing the key change)
-  // Just make sure to remove the getImageUrl helper and use `card.image` directly
-  // Here is the full code for clarity:
-  
-  const [showInfo, setShowInfo] = React.useState(false);
-
-  React.useEffect(() => {
+  useEffect(() => {
     if (cardId) {
       const timer = setTimeout(() => {
         setShowInfo(true);
@@ -56,9 +41,11 @@ const CardOverlay = ({ cardId, onClose }) => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <button className="card-overlay-close" onClick={handleClose}>×</button>
+
             <motion.div className="card-overlay-image" layout transition={{ type: 'spring', damping: 25, stiffness: 200 }}>
               <img src={card.image} alt={card.name} />
             </motion.div>
+
             {showInfo && (
               <motion.div
                 className="card-overlay-info"
@@ -72,10 +59,8 @@ const CardOverlay = ({ cardId, onClose }) => {
                     <span key={index} className="keyword-tag">#{keyword}</span>
                   ))}
                 </div>
-                <p>
-                  Maybe you are at the brink of something new? Are you?
-                  This section can be extended with more detailed information about the card's meaning.
-                </p>
+                {/* UPDATED: Display the description from our data file */}
+                <p>{card.description}</p>
               </motion.div>
             )}
           </motion.div>
@@ -84,6 +69,5 @@ const CardOverlay = ({ cardId, onClose }) => {
     </AnimatePresence>
   );
 };
-
 
 export default CardOverlay;
